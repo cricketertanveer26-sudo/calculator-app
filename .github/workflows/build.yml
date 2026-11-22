@@ -19,6 +19,7 @@ jobs:
         run: |
           buildozer init
           sed -i 's/title = My Application/title = Mera Calculator/g' buildozer.spec
+          sed -i 's/requirements = python3,kivy/requirements = python3,kivy==2.3.0/g' buildozer.spec
           sed -i 's/#android.accept_sdk_license = False/android.accept_sdk_license = True/g' buildozer.spec
           sed -i 's/android.archs = arm64-v8a, armeabi-v7a/android.archs = arm64-v8a/g' buildozer.spec
           yes | buildozer -v android debug
